@@ -4,11 +4,22 @@ class AnotherComp extends Component {
   constructor (msg) {
     super()
     this.msg = msg
+    this.value = 0
+
+    this.handleClick = this.handleClick.bind(this)
   }
 
   createElement () {
     const { msg } = this
-    return html`<div>${msg}</div>`
+    return html`<div>
+      ${msg}
+      <button onclick="${this.handleClick}">Clicked ${this.value}</button>
+    </div>`
+  }
+
+  handleClick () {
+    this.value++
+    this.update()
   }
 
   onload () {

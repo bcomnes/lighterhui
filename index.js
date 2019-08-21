@@ -30,14 +30,13 @@ exports.Component = class Component {
     if (opts.createElement) this.createElement = opts.createElement
 
     this.createElement = this.createElement.bind(this)
+    this.html = html.for(this)
   }
 
   get element () {
     if (this[first]) {
       this[first] = false
-      const frag = new window.DocumentFragment()
-      render(frag, this.createElement)
-      this[element] = frag.children[0]
+      this[element] = this.createElement()
       observe(this[element])
       this[element].addEventListener('connected', this._onload.bind(this))
       this[element].addEventListener('disconnected', this._onunload.bind(this))
@@ -77,7 +76,7 @@ exports.Component = class Component {
   }
 
   render () {
-    render(this.element, this.createElement)
+    this.createElement()
   }
 
   onload () {

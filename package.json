@@ -19,6 +19,9 @@
     "lighterhtml-plus": "^0.17.1"
   },
   "devDependencies": {
+    "@tap-format/spec": "^0.2.0",
+    "auto-changelog": "^1.11.0",
+    "gh-release": "^3.5.0",
     "budo": "^11.6.3",
     "dependency-check": "^4.1.0",
     "npm-run-all": "^4.1.5",
@@ -35,10 +38,14 @@
     "url": "https://github.com/bcomnes/lighterhui.git"
   },
   "scripts": {
+    "prepublishOnly": "git push && git push --tags && gh-release",
     "test": "run-s test:*",
     "test:deps": "dependency-check . --no-dev --no-peer",
     "test:standard": "standard",
     "test:tape": "tape test.js",
-    "start": "budo example/index.js:bundle.js --dir example --live --open"
+    "start": "budo example/index.js:bundle.js --dir example --live --open",
+    "version": "run-s version:*",
+    "version:changelog": "auto-changelog -p --template keepachangelog --breaking-pattern 'breaking'",
+    "version:git": "git add CHANGELOG.md"
   }
 }

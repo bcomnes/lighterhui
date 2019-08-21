@@ -1,4 +1,4 @@
-const { Component, html: globalHtml } = require('../index.js')
+const { Component, html } = require('../index.js')
 
 class AnotherComp extends Component {
   constructor (msg) {
@@ -10,8 +10,8 @@ class AnotherComp extends Component {
   }
 
   createElement () {
-    const { msg, html } = this
-    return html`<div>
+    const { msg } = this
+    return this.html`<div>
       ${msg}
       <button onclick="${this.handleClick}">Clicked ${this.value}</button>
     </div>`
@@ -41,19 +41,20 @@ class MyComponent extends Component {
     this.view2 = new AnotherComp('view2')
     this.view3 = new AnotherComp('view3')
 
+    this.someElement = html`<div>yo</div>`
+
     this.handleClick = this.handleClick.bind(this)
   }
 
   createElement () {
-    const { html } = this
-
-    return html`
+    return this.html`
       <div>This is a component: ${this.count}
         <button onclick="${this.handleClick}">Click me</button>
         ${(this.count % 3) === 0 ? this.view.element : null}
         ${(this.count % 3) === 1 ? this.view2.element : null}
         ${(this.count % 3) === 2 ? this.view3.element : null}
         <div class="${this.count}">foo ${this.count} bar</div>
+        ${this.someElement}
       </div>`
   }
 

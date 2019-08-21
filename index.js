@@ -7,6 +7,7 @@ const observe = disconnected({ Event, WeakSet })
 exports.html = html
 exports.svg = svg
 exports.hook = hook
+exports.render = render
 
 const unloaders = Symbol('unloaders')
 const updating = Symbol('updating')

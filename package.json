@@ -1,10 +1,10 @@
 {
-  "name": "lui",
-  "description": "WIP - nothing to see here",
+  "name": "lighterhui",
+  "description": "hui + lighterhtml",
   "version": "0.0.0",
   "author": "Bret Comnes <bcomnes@gmail.com> (https://bret.io)",
   "bugs": {
-    "url": "https://github.com/bcomnes/lui/issues"
+    "url": "https://github.com/bcomnes/lighterhui/issues"
   },
   "dependencies": {
     "@ungap/essential-weakset": "^0.1.2",
@@ -26,13 +26,13 @@
     "tape": "^4.11.0",
     "tape-promise": "^4.0.0"
   },
-  "homepage": "https://github.com/bcomnes/lui",
+  "homepage": "https://github.com/bcomnes/lighterhui",
   "keywords": [],
   "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bcomnes/lui.git"
+    "url": "https://github.com/bcomnes/lighterhui.git"
   },
   "scripts": {
     "test": "run-s test:*",

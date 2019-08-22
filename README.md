@@ -95,7 +95,7 @@ The nanostack had a lot of good ideas, but there was some unsolved issues and sh
 
 Lighterhtml provides the ability to write stateful DOM components while avoiding many of those issues (like morph algorithm oditiies, and proxy nodes and other weird hacks).
 
-Hui also solved a lot of issues nanocomponent had, especially regarding nested updates.  Putting the two together should provide the best of both words!
+Hui also solved a lot of issues nanocomponent had, especially regarding nested updates.  Putting the two together should provide the best of both worlds!  Maybe, I dunno. 
 
 ## License
 

@@ -76,8 +76,8 @@ const view = new Component({
 
 ### `const { Component } = require('lighterhui')`
 
-Base component with manual rendering and hooks for load, unload and
-automatic event life cycle. Default render
+Base component with morph re-rendering and hooks for load, unload and
+automatic event life cycle. 
 
 ### `const { html, svg, hook, render } = require('lighterhui')`
 
